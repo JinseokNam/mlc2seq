@@ -1,0 +1,5 @@
+nose2
+flake8
+toolz==0.8.0
+git+git://github.com/mila-udem/fuel.git@0.2.0
+git+git://github.com/Theano/Theano.git@rel-0.8.2

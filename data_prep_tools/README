@@ -1,0 +1,13 @@
+This directory contains files to create datasets to be prepared for the next preprocessing steps.
+
+1) Reuters21578
+
+./run_wiki_preparation.sh
+
+2) RCV1
+
+./run_nyt_preparation.sh
+
+3) BioASQ
+
+./run_bioasq_preparation.sh

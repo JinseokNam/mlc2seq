@@ -1,0 +1,76 @@
+{
+  "training": {
+    "optimizer": "adam",
+    "clip_c": 1,
+    "patience": 10,
+    "finish_after": 10000000,
+    "lrate": 0.0002,
+    "max_epochs": 40
+  },
+  "multi": {
+    "valid_sync": true,
+    "train_len": 32,
+    "control_port": 5567,
+    "batch_port": 5568,
+    "beta": 0.9,
+    "log_port": 5569
+  },
+  "management": {
+    "sample_freq": 100,
+    "valid_freq": 100,
+    "time_limit": 15000,
+    "saveto": "model",
+    "pretrained_word_emb": "output/gensim_pretrained_word_emb.model",
+    "save_freq": 5000,
+    "verbose": true
+  },
+  "validation": {
+    "nproc": 3,
+    "valid_src": "vad.delete.tok.max_300.lc.txt",
+    "valid_trg": "val.delete.txt",
+    "input_vocab": "word_vocab.txt",
+    "label_vocab": "label_vocab.txt"
+  },
+  "data": {
+    "src": "trd.delete.tok.max_300.lc.txt",
+    "trg": "trl.delete.txt",
+    "valid_src": "vad.delete.tok.max_300.lc.txt",
+    "valid_trg": "val.delete.txt",
+    "input_token_level": "word",
+    "input_vocab": "word_vocab.txt",
+    "label_vocab": "label_vocab.txt",
+    "reverse_labels": false,
+    "batch_size": 64,
+    "valid_batch_size": 64,
+    "n_input_tokens": 22747,
+    "n_labels": 90,
+    "max_input_length": 300,
+    "max_label_length": 30
+  },
+  "testdata": {
+    "src": "tsd.delete.tok.max_300.lc.txt",
+    "trg": "tsl.delete.txt",
+    "input_vocab": "word_vocab.txt",
+    "label_vocab": "label_vocab.txt",
+    "batch_size": 64,
+    "n_input_tokens": 22747,
+    "n_labels": 90,
+    "max_input_length": 300
+  },
+  "model": {
+    "encoder_dim": [512],
+    "decoder_dim": [1024],
+    "use_dropout": true,
+    "word_drop_prob": 0.2,
+    "encoder": "gru",
+    "enc_dir": "none",
+    "decoder": "gru",
+    "input_token_level": "word",
+    "fixed_embeddings": true,
+    "label_type": "multinomial",
+    "n_input_tokens": 22747,
+    "n_labels": 90,
+    "dim_word": 512,
+    "dim_label": 256
+  }
+}
